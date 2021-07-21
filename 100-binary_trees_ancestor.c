@@ -48,5 +48,6 @@ binary_tree_t
 			break;
 		second = second->parent;
 	}
+	free(path);
 	return (ancestor);
 }
