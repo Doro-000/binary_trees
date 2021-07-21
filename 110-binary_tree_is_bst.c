@@ -4,7 +4,7 @@
  * tree_is_bst - checks if a binary tree is a valid Binary Search Tree
  * @tree: the tree to check
  * @low: lowest node
- * @hight: highest node
+ * @high: highest node
  *
  * Return: 1 if tree is a valid BST, and 0 otherwise
  */
@@ -19,16 +19,21 @@ tree_is_bst(binary_tree_t *tree, binary_tree_t *low, binary_tree_t *high)
 
 	left_less = (low != NULL && tree->n <= low->n);
 	great_right = (high != NULL && tree->n >= high->n);
-	
+
 	if (left_less || great_right)
 		return (0);
-	
 
 	left_bst = tree_is_bst(tree->left, low, tree);
 	right_bst = tree_is_bst(tree->right, tree, high);
 	return (left_bst && right_bst);
 }
 
+/**
+ * binary_tree_is_bst - wrapper function for tree_is_bst
+ * @tree: tree to be checked
+ *
+ * Return: 1 for true, 0 for false
+ */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
 	return (tree_is_bst((binary_tree_t *)tree, NULL, NULL));
