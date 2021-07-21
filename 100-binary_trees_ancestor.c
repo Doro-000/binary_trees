@@ -38,9 +38,10 @@ binary_tree_t
 		{
 			if (second == path[i])
 			{
-				ancestor = path[i];
+				ancestor = (binary_tree_t *)second;
 				free(path);
 				flag = 1;
+				break;
 			}
 		}
 		if (flag)
