@@ -96,7 +96,7 @@ bst_t *del_leaf(bst_t **node, bst_t *root)
 }
 
 /**
- * bst_remove - removes a node from a Binary Search Tree 
+ * bst_remove - removes a node from a Binary Search Tree
  * @root: root node of the tree
  * @value: value to remove in the tree
  *
