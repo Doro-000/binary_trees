@@ -17,7 +17,7 @@ binary_tree_t
 	if (first == NULL || second == NULL)
 		return (NULL);
 	if (first->parent == NULL && second->parent == NULL)
-		return (NULL);
+		return ((binary_tree_t *)first);
 	if (first->parent == NULL || second->parent == NULL)
 	{
 		if (first->parent == NULL)
