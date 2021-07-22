@@ -47,10 +47,10 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 	if (!is_complete((binary_tree_t *)tree, 0, count_nodes(tree)))
-		return(0);
+		return (0);
 	if (tree->right == NULL && tree->left == NULL)
 		return (1);
-	if (tree->n < tree->left->n || tree->n < tree->right->n)
+	if (tree->n <= tree->left->n || tree->n <= tree->right->n)
 		return (0);
 	max_left = binary_tree_is_heap(tree->left);
 	max_right = binary_tree_is_heap(tree->right);
