@@ -12,7 +12,7 @@ binary_tree_t
 {
 	binary_tree_t **path = NULL;
 	binary_tree_t *ancestor = NULL;
-	int x = 0, i, flag = 0;
+	int x = 0, i;
 
 	if (first == NULL || second == NULL)
 		return (NULL);
@@ -31,15 +31,13 @@ binary_tree_t
 		{
 			if (second == path[i])
 			{
-				ancestor = (binary_tree_t *)second;
+				ancestor = path[i];
 				free(path);
-				flag = 1;
-				break;
+				return (ancestor);
 			}
 		}
-		if (flag)
-			break;
 		second = second->parent;
 	}
-	return (ancestor);
+	free(path);
+	return (NULL);
 }
