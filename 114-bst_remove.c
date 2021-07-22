@@ -129,7 +129,7 @@ bst_t *bst_remove(bst_t *root, int value)
 			node->left = NULL;
 		}
 		free(temp);
-		return(root);
+		return (root);
 	}
 	else
 	{
