@@ -34,6 +34,7 @@ void binary_tree_print(const binary_tree_t *);
 
 /*CREATION*/
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
+bst_t *array_to_bst(int *array, size_t size);
 
 /*INSERTION*/
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -42,6 +43,7 @@ bst_t *bst_insert(bst_t **tree, int value);
 
 /*DELETION*/
 void binary_tree_delete(binary_tree_t *tree);
+bst_t *bst_remove(bst_t *root, int value);
 
 /*TRAVERSAL*/
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
@@ -63,6 +65,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 /*ROTATIONS*/
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+
+/*SEARCH*/
+bst_t *bst_search(const bst_t *tree, int value);
 
 /*MISC*/
 int binary_tree_is_leaf(const binary_tree_t *node);
