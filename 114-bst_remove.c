@@ -114,7 +114,6 @@ bst_t *bst_remove(bst_t *root, int value)
 
 	if (node->right == NULL && node->left == NULL)
 		return (del_leaf(&node, root));
-
 	else if (node->right == NULL || node->left == NULL)
 	{
 		if (node->right == NULL)
@@ -143,9 +142,4 @@ bst_t *bst_remove(bst_t *root, int value)
 		free(successor);
 		return (root);
 	}
-	free(temp);
-	new_root = node;
-	while (new_root->parent != NULL)
-		new_root = new_root->parent;
-	return (new_root);
 }
