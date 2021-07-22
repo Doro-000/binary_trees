@@ -50,9 +50,13 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 		return (0);
 	if (tree->right == NULL && tree->left == NULL)
 		return (1);
-	if (tree->n <= tree->left->n || tree->n <= tree->right->n)
-		return (0);
-	max_left = binary_tree_is_heap(tree->left);
-	max_right = binary_tree_is_heap(tree->right);
-	return (max_left && max_right);
+	if (tree->right == NULL)
+		return (tree->n > tree->left->n);
+	if (tree->n > tree->right->n && tree->n > tree->left->n)
+	{
+		max_left = binary_tree_is_heap(tree->left);
+		max_right = binary_tree_is_heap(tree->right);
+		return (max_left && max_right);
+	}
+	return (0);
 }
