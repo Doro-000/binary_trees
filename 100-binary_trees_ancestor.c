@@ -16,15 +16,6 @@ binary_tree_t
 
 	if (first == NULL || second == NULL)
 		return (NULL);
-	if (first->parent == NULL && second->parent == NULL)
-		return ((binary_tree_t *)first);
-	if (first->parent == NULL || second->parent == NULL)
-	{
-		if (first->parent == NULL)
-			return ((binary_tree_t *)first);
-		if (second->parent == NULL)
-			return ((binary_tree_t *)second);
-	}
 	path = malloc(sizeof(*path));
 	while (first != NULL)
 	{
