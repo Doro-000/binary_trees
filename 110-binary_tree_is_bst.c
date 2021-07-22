@@ -36,5 +36,7 @@ tree_is_bst(binary_tree_t *tree, binary_tree_t *low, binary_tree_t *high)
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	if (tree == NULL)
+		return (0);
 	return (tree_is_bst((binary_tree_t *)tree, NULL, NULL));
 }
