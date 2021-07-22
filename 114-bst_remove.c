@@ -41,7 +41,7 @@ bst_t *min(const bst_t *root)
 }
 
 /**
- * get_successor - Get the in-order successor of a node 
+ * get_successor - Get the in-order successor of a node
  * @node: node to find successor for
  * @root: root of tree
  *
@@ -143,4 +143,9 @@ bst_t *bst_remove(bst_t *root, int value)
 		free(successor);
 		return (root);
 	}
+	free(temp);
+	new_root = node;
+	while (new_root->parent != NULL)
+		new_root = new_root->parent;
+	return (new_root);
 }
