@@ -7,6 +7,9 @@
 #include <string.h>
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
+#define LEFT(i) ((2 * i) + 1)
+#define RIGHT(i) ((2 * i) + 2)
+#define PARENT(i) ((i - 1) / 2)
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -78,4 +81,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 int binary_tree_is_complete(const binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
 int binary_tree_is_heap(const binary_tree_t *tree);
+int binary_tree_is_avl(const binary_tree_t *tree);
 #endif /*BIN_T*/
