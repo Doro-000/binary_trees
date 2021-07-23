@@ -136,9 +136,9 @@ bst_t *bst_remove(bst_t *root, int value)
 		successor = get_successor(node, root);
 		node->n = successor->n;
 		if (successor->parent->right == successor)
-			successor->parent->right = NULL;
+			successor->parent->right = successor->right;
 		else
-			successor->parent->left = NULL;
+			successor->parent->left = successor->left;
 		free(successor);
 		return (root);
 	}
